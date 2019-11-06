@@ -10,10 +10,12 @@ const TodoForm = props => {
                 value={props.newTodo}
                 placeholder='...add a task'
             />
-            <button onClick={() => {
+            <button onClick={e => {
+                e.preventDefault();
                 props.dispatch( { type: 'AddTodo', payload: props.newTodo })
             }}>Add Task</button>
-            <button onClick={() => {
+            <button onClick={e => {
+                e.preventDefault();
                 props.dispatch({ type: 'ClearTodo', payload: props.newTodo })
             }}>Clear Completed</button>
         </form>

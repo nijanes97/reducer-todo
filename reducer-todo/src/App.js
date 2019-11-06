@@ -6,15 +6,14 @@ import './App.css';
 
 function App() {
   const [state, dispatch] = useReducer(Reducer, InitialState)
-  const [newTodo, setNewTodo] = useState("");
+  const [newTodo, setNewTodo] = useState('');
   const handleChanges = e => {
     setNewTodo(e.target.value);
   }
-  console.log(state);
   return (
     <div className="App">
       <h2>Todo List</h2>
-      <TodoForm handler={handleChanges} newTodo={newTodo} dispatch={dispatch}/>
+      <TodoForm newTodo={newTodo} dispatch={dispatch} handler={handleChanges}/>
       <TodoList dispatch={dispatch} state={state}/>
     </div>
   );
